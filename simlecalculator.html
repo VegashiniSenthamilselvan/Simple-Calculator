@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'poppins', sans-serif;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            background-color: rgb(212, 226, 236);
+            margin-top: 150px;
+        }
+        .bd {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            justify-content: center;
+            background-color: rgb(212, 226, 236);
+        }
+        .cal {
+            background-color: rgb(90, 132, 162);
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+        }
+        .cal form input {
+            border: none;
+            outline: none;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            background-color: transparent;
+            border-radius: 23px;
+            box-shadow: -8px -8px 15px rgba(225, 225, 225, 0.1);
+            color: white;
+            font-size: 20px;
+        }
+        form .display {
+            display: flex;
+            justify-content: flex-end;
+            margin: 20px 0;
+        }
+        form .display input {
+            text-align: right;
+            border: none;
+            font-size: 45px;
+            box-shadow: none;
+            flex: 1;
+        }
+        form input.row {
+            color: rgb(250, 156, 34);
+        }
+        form input.eq {
+            width: 180px;
+        }
+        .h2{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+   <center><h2>CALCULATOR</h2></center> 
+    <div class="bd">
+        <div class="cal">
+            <form>
+                <div class="display">
+                    <input type="text" name="display">
+                </div>
+                
+                <div>
+                    <input type="button" value="AC" class="row" onclick="display.value=''">
+                    <input type="button" value="DEL" class="row" onclick="display.value=display.value.toString().slice(0,-1)">
+                    <input type="button" value="." class="row" onclick="display.value+='.'">
+                    <input type="button" value="/" class="row" onclick="display.value+='/'">
+                </div>
+        
+                <div>
+                    <input type="button" value="7" onclick="display.value+='7'">
+                    <input type="button" value="8" onclick="display.value+='8'">
+                    <input type="button" value="9" onclick="display.value+='9'">
+                    <input type="button" value="*" class="row" onclick="display.value+='*'">
+                </div>
+        
+                <div>
+                    <input type="button" value="4" onclick="display.value+='4'">
+                    <input type="button" value="5" onclick="display.value+='5'">
+                    <input type="button" value="6" onclick="display.value+='6'">
+                    <input type="button" value="-" class="row" onclick="display.value+='-'">
+                </div>
+        
+                <div>
+                    <input type="button" value="1" onclick="display.value+='1'">
+                    <input type="button" value="2" onclick="display.value+='2'">
+                    <input type="button" value="3" onclick="display.value+='3'">
+                    <input type="button" value="+" class="row" onclick="display.value+='+'">
+                </div>
+        
+                <div>
+                    <input type="button" value="00" onclick="display.value+='00'">
+                    <input type="button" value="0" onclick="display.value+='0'">
+                    <input type="button" value="=" class="eq" onclick="display.value=eval(display.value)">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
